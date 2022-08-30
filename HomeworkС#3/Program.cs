@@ -46,53 +46,82 @@
 
 // Формула: F^2 = (x2-x1)^2+(y2-y1)^2+(z2-z1)^2.
 
-//Функция для нахождения расстояние между двух точек в 3D пространстве
-double RastoanieV3D(double x1, double x2, double y1, double y2, double z1, double z2)
+// //Функция для нахождения расстояние между двух точек в 3D пространстве
+// double RastoanieV3D(double x1, double x2, double y1, double y2, double z1, double z2)
+// {
+//     //создаём переменные x,y,z и находим их значения 
+//     double x = Math.Pow((x2 - x1), 2);
+//     double y = Math.Pow((y2 - y1), 2);
+//     double z = Math.Pow((z2 - z1), 2);
+//     //находим корень
+//     double Rast = Math.Sqrt(x + y + z);
+//     //  и возвращаем результат
+//     return Rast;
+// }
+
+
+// // просим пользователя ввести координату x точки A
+// Console.WriteLine("Введите координату x точки A: ");
+// //записываем это число в переменную X1
+// int X1 = Convert.ToInt32(Console.ReadLine());
+
+// // просим пользователя ввести координату y точки A
+// Console.WriteLine("Введите координату y точки A: ");
+// //записываем это число в переменную Y1
+// int Y1 = Convert.ToInt32(Console.ReadLine());
+
+// // просим пользователя ввести координату z точки A
+// Console.WriteLine("Введите координату z точки A: ");
+// //записываем это число в переменную Z1
+// int Z1 = Convert.ToInt32(Console.ReadLine());
+
+
+// // просим пользователя ввести координату x точки B
+// Console.WriteLine("Введите координату x точки B: ");
+// //записываем это число в переменную X2
+// int X2 = Convert.ToInt32(Console.ReadLine());
+
+// // просим пользователя ввести координату y точки B
+// Console.WriteLine("Введите координату y точки B: ");
+// //записываем это число в переменную Y2
+// int Y2 = Convert.ToInt32(Console.ReadLine());
+
+// // просим пользователя ввести координату z точки A
+// Console.WriteLine("Введите координату z точки B: ");
+// //записываем это число в переменную Z2
+// int Z2 = Convert.ToInt32(Console.ReadLine());
+// // вызываем функцию RastoanieV3D
+// double res = RastoanieV3D(X1, X2, Y1, Y2, Z1, Z2);
+// // Выводим результат
+// Console.WriteLine("Расстояние равно: " + res);
+
+// Задача 23
+// Напишите программу, которая принимает на вход число (N) 
+// и выдаёт таблицу кубов чисел от 1 до N.
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+// Функция для нахождения таблицы кубов чисел от 1 до N
+void TablKyb(int N)
 {
-    //создаём переменные x,y,z и находим их значения 
-    double x = Math.Pow((x2 - x1), 2);
-    double y = Math.Pow((y2 - y1), 2);
-    double z = Math.Pow((z2 - z1), 2);
-    //находим корень
-    double Rast = Math.Sqrt(x + y + z);
-    //  и возвращаем результат
-    return Rast;
+    // создаём переменную kub 
+    int kub = 1;
+    // пока kub меньше или равен N то...
+    while (kub <= N)
+    {
+        // выводим на консоль куб
+        Console.Write(kub * kub * kub + ", ");
+        // и увеличиваем его на 1 
+        kub++;
+    }
+    //в конце добавляем пустую строку чтобы всё не сливалось
+    Console.WriteLine(" ");
 }
-
-
-// просим пользователя ввести координату x точки A
-Console.WriteLine("Введите координату x точки A: ");
-//записываем это число в переменную X1
-int X1 = Convert.ToInt32(Console.ReadLine());
-
-// просим пользователя ввести координату y точки A
-Console.WriteLine("Введите координату y точки A: ");
-//записываем это число в переменную Y1
-int Y1 = Convert.ToInt32(Console.ReadLine());
-
-// просим пользователя ввести координату z точки A
-Console.WriteLine("Введите координату z точки A: ");
-//записываем это число в переменную Z1
-int Z1 = Convert.ToInt32(Console.ReadLine());
-
-
-// просим пользователя ввести координату x точки B
-Console.WriteLine("Введите координату x точки B: ");
-//записываем это число в переменную X2
-int X2 = Convert.ToInt32(Console.ReadLine());
-
-// просим пользователя ввести координату y точки B
-Console.WriteLine("Введите координату y точки B: ");
-//записываем это число в переменную Y2
-int Y2 = Convert.ToInt32(Console.ReadLine());
-
-// просим пользователя ввести координату z точки A
-Console.WriteLine("Введите координату z точки B: ");
-//записываем это число в переменную Z2
-int Z2 = Convert.ToInt32(Console.ReadLine());
-// вызываем функцию RastoanieV3D
-double res = RastoanieV3D(X1, X2, Y1, Y2, Z1, Z2);
-// Выводим результат
-Console.WriteLine("Расстояние равно: " + res);
-
-
+// просим пользователя ввести число
+Console.WriteLine("Введите число: ");
+// записываем это число в переменную n
+int n = Convert.ToInt32(Console.ReadLine());
+// если число отрицательное то выводим сообщение "Некорректный ввод"
+if (n <= 0) Console.WriteLine("Некорректный ввод");
+// иначе вызываем функцию TablKyb
+else TablKyb(n);
